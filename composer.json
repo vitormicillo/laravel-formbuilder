@@ -1,0 +1,21 @@
+{
+    "name": "doode/laravel-formbuilder",
+    "description": "Laravel Package for Creating a Drag-and-Drop Form Builder Using JQuery Form Builder",
+    "authors": [{
+        "name": "Vitor Micillo",
+        "email": "vitormicillo@gmail.com"
+    }],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "doode\\FormBuilder\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "doode\\FormBuilder\\FormBuilderServiceProvider"
+            ]
+        }
+    }
+}
