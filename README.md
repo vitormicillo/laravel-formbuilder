@@ -5,6 +5,9 @@ A [Laravel](https://laravel.com) package for creating a drag-and-drop form build
 
 <!-- *Note: Features like email, registration and file uploads are disabled in the demo* -->
 
+All contributions are welcomed! (but please start a discussion to make sure the PR is warranted first)
+
+
 Screenshot:
 
 ![alt text](https://www.doode.com.br/images/formbuilder.png "Form Builder Screenshot")
@@ -25,7 +28,7 @@ Form permission options
 ## Requirements
 + Laravel 7+
 + Bootstrap 4+
-+ MySQL
++ MySQL/MariaDB
 + [Laravel Authentication](https://laravel.com/docs/7.x/authentication#authentication-quickstart)
 
 ```bash
@@ -45,7 +48,7 @@ php artisan ui bootstrap --auth
 + footable - A responsive table plugin built on jQuery and made for Bootstrap. [View FooTable Documentation](https://fooplugins.github.io/FooTable/)
 + sweetalert - A beautiful replacement for site error/warning/confirmation messages. [View SweetAlert Documentation](https://sweetalert.js.org/)
 
-## Installation Instructions
+# Roadmap
 This custom package takes a couple steps to install but I will try to make it as simple as possible.
 
 ### Step One:
@@ -93,7 +96,6 @@ At the bottom of the blade file, just above the closing the closing body tag:
 *Note: If you ever need to change which files are called using these @stack values, you can update the config file.*
 
 
-
 ### Step Six:
 Publish the custom blade view files by running
 ```bash
@@ -116,11 +118,11 @@ php artisan storage:link
 ```
 
 ## Accessing The Application
-Ta Da! You did it!  Now to access the form application.
-http://your.domain.com/form-builder/forms
+Done!  Now to access the form application.
+http://localhost:8000/form-builder/forms
 
 To view submissions:
-http://your.domain.com/form-builder/my-submissions
+http://localhost:8000/form-builder/my-submissions
 
 ## Using The Trait
 You can access forms and submissions that belong to a user in your application. To use the trait add a use statement to your user model class.
@@ -137,7 +139,7 @@ class User extends Authenticatable
 You can now access the user's forms and submissions by running
 
 ```php
-$user = User::first();
+$user = User::first(); or User::find($id);
 
 // get the user's forms
 $user->forms;
@@ -158,4 +160,14 @@ The package dispatches a number of events when records are created or updated so
 
 ## Precautions
 1. Make sure you have a table name users with a colum id {bigSignedInteger} in your database.
-2. Once you have submission(s) on a form , dont attempt to edit the form again bacause it will break the display of earlier submissions 3. 
+2. Once you have submission(s) on a form , dont attempt to edit the form again bacause it will break the display of earlier submissions 3. I'm working on this to improve usability.
+
+<hr>
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+## License
+
+Copyright © Doode
+
+All Doode packages are open-sourced software licensed under the [MIT license](LICENSE.md).
